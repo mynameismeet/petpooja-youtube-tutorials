@@ -1,21 +1,21 @@
 # Meta Ads with AI — portions (edit any part on its own) · v2 timing (3:17.8)
 
-Open Studio (`cd engine && npx remotion studio`) → **Marketing-Automation › MA-Portions**.
-Rendered clips of every portion: `exports/portions_v2/`.
+Open Studio (`cd engine && npx remotion studio`) → **marketing-automation › MA-Portions** (or `tools/pipeline.sh studio`).
+Rendered clips of every portion: `exports/portions/`.
 Each portion is its own canvas + timeline (local time starts at 0:00). In **MA-Full**, double-click
 a portion bar to jump into it at that frame. Changes in one portion show up in the full video too.
 
 | Portion (Studio id) | In full video | Lines | What's on screen |
 |---|---|---|---|
-| MA-00-Intro-Hook | 0:00.0 – 0:21.9 | L01–L03 | logo intro → dashboard flies in |
-| MA-01-Open-Meta | 0:21.9 – 0:29.2 | L04 | Advertisements → Meta Platforms click |
-| MA-02-Creative-Styles | 0:29.2 – 0:48.6 | L05–L09 | Aesthetic / Loud / Retro / Let AI decide + checklist |
-| MA-03-Brand-Identity | 0:48.6 – 1:08.3 | L10–L13 | logo & colours, Anton + Barlow, Let's Create Ad, loading |
-| MA-04-Describe-Campaign | 1:08.3 – 1:36.8 | L14–L18 | quick ideas → Re-engage chip → edit prompt (5×) → submit |
-| MA-05-AI-Builds-Ad | 1:36.8 – 2:11.9 | L19–L24 | thinking (7×) → Style 2 → Go ahead → designing (10×) → reveal → Proceed |
-| MA-06-Copy-CTA-Location | 2:11.9 – 2:30.1 | L25–L27 | edit copy, Regenerate, Call Now, add locations |
-| MA-07-Budget-Schedule | 2:30.1 – 2:44.7 | L28–L29 | budget cards, custom amount, ₹15,000, dates, Next |
-| MA-08-Review-Launch | 2:44.7 – 3:04.9 | L30–L32 | summary, total, Pay & Launch, phone preview |
+| MA-00-Intro-hook | 0:00.0 – 0:21.9 | L01–L03 | logo intro → dashboard flies in |
+| MA-01-Open-Meta-Platforms | 0:21.9 – 0:29.2 | L04 | Advertisements → Meta Platforms click |
+| MA-02-Creative-styles | 0:29.2 – 0:48.6 | L05–L09 | Aesthetic / Loud / Retro / Let AI decide + checklist |
+| MA-03-Brand-identity | 0:48.6 – 1:08.3 | L10–L13 | logo & colours, Anton + Barlow, Let's Create Ad, loading |
+| MA-04-Describe-campaign | 1:08.3 – 1:36.8 | L14–L18 | quick ideas → Re-engage chip → edit prompt (5×) → submit |
+| MA-05-AI-builds-the-ad | 1:36.8 – 2:11.9 | L19–L24 | thinking (7×) → Style 2 → Go ahead → designing (10×) → reveal → Proceed |
+| MA-06-Copy-CTA-location | 2:11.9 – 2:30.1 | L25–L27 | edit copy, Regenerate, Call Now, add locations |
+| MA-07-Budget-schedule | 2:30.1 – 2:44.7 | L28–L29 | budget cards, custom amount, ₹15,000, dates, Next |
+| MA-08-Review-pay-launch | 2:44.7 – 3:04.9 | L30–L32 | summary, total, Pay & Launch, phone preview |
 | MA-09-Outro | 3:04.9 – 3:17.8 | L33 | end card + subscribe |
 
 ## How to ask for a change
