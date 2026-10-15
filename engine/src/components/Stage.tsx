@@ -3,6 +3,7 @@ import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useVideoC
 import { cameraAt } from "../camera";
 import { useGlobalFrame, useOffset } from "../GlobalTime";
 import { useVideo } from "../VideoContext";
+import { StageExtras } from "./StageExtras";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
@@ -57,6 +58,7 @@ export const Stage: React.FC = () => {
             )}
           </Sequence>
         ))}
+        <StageExtras />
       </div>
     </AbsoluteFill>
   );

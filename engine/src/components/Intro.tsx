@@ -1,6 +1,6 @@
 import { AbsoluteFill, Easing, Img, interpolate, staticFile } from "remotion";
 import { useGlobalFrame } from "../GlobalTime";
-import { COLORS } from "../theme";
+import { accentOf, COLORS } from "../theme";
 import { useVideo } from "../VideoContext";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -44,7 +44,7 @@ export const Intro: React.FC = () => {
           {before}
           <span
             style={{
-              background: `linear-gradient(90deg, ${COLORS.accent}, #FF9F43)`,
+              background: `linear-gradient(90deg, ${accentOf(v.theme).gradient[0]}, ${accentOf(v.theme).gradient[1]})`,
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",

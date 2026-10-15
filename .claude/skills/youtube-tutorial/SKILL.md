@@ -32,6 +32,19 @@ recording can't tell you.
    after every scroll/drawer.
 6. Note anything sensitive (payment popup, QR, real numbers) → footage must end before it.
 
+### G2b · No recording — Claude records it (worked example: `videos/attendo-payslip/`)
+1. User enables chrome://inspect/#remote-debugging and is logged in. `node tools/cdp.mjs tabs` → the product tab.
+   Edit `ALLOWED` in cdp.mjs to the product's domain. Ask the user to allow `Bash(node tools/cdp.mjs:*)` once.
+2. Explore read-only (`look`, `do '[…]'`), map the flow, list every data-changing click and ask ONE question for all
+   of them (which test record, downloads, etc.). Dry-run each part with `do` before recording it.
+3. Record in parts: `record <tab> source/rec/0N <steps.json>` → `python3 tools/frames-to-mp4.py source/rec/0N
+   "source/raw/0N name.mp4" --clean`. Keep the Chrome window size fixed for all parts; every part must have the
+   same frame size (check with ffprobe; crop per part if not). Add `eval` guard steps before irreversible clicks.
+4. `python3 tools/cursor-path.py <slug>` → `engine/src/videos/<slug>/cursor.ts`; pass `cursor: CURSOR` in edit.ts.
+   Exact element boxes for highlights are in each `events.json` (`box`, CSS px × `scale`).
+5. Steps that happened off-camera (e.g. typing into a confirm box) → hold the frame and act them out with
+   `overlays` (typed text, enabled button) + `cursorScript`. Downloaded files → an `image` segment.
+
 ## G3 · Script (Hinglish) → ✅ user approves
 Start from `templates/script.md`. Rules: ~10 words/sentence, respectful "kijiye", one action per sentence, name
 only what the recording shows. Intro L02 must be personal: "*Petpooja <Product>* se, aap … bahut *easily* …".
@@ -42,7 +55,7 @@ voice take; put `{sfx: riser ends @start}` on the reveal line. Send the script; 
 1. `python3 tools/script-to-tts.py <slug>`, then add a `tts` field per line in `script.tts.json`: Hindi words in
    Devanagari, product/UI terms in Latin. **Petpooja → `पेट पूजा`** (users rejected the anglicised "pet-puja").
    New names: test with `node tools/tts.mjs say "<text>" /tmp/x.mp3` + whisper (en and hi) before the full take.
-2. `tools/pipeline.sh voice <slug>` (one take per section, split per line with word timings).
+2. `tools/pipeline.sh voice <slug>` (ONE take for the whole script, split per line with word timings).
 3. QC: download whisper `ggml-small-q5_1.bin` to the scratchpad; transcribe each `audio/vo/L*.wav` (hi; re-check
    lines with English words in `-l en` — hi mode loops on English). Every line complete, no repeats. Delete the model after.
 4. Music (Epidemic, Morning Rises `07d33825-eeda-32f9-92f6-b650a2da5216`): run `tools/pipeline.sh mix <slug>` once
@@ -78,4 +91,9 @@ Drive "How-to Videos/<Product>"; the Drive connector can't take big MP4s — ask
 - Never `rm` with an unguarded variable path; tools clean their own temp (stills.mjs deletes its bundle).
 - Studio and render both eat RAM → close Studio before `finish`. Free disk falls ~1.5 GB during a render (swap).
 - ElevenLabs alignment includes `<break>` tag characters; passage mode handles it. Too many breaks = choppy read.
-- Line-by-line TTS sounds disconnected — always section takes.
+- Line-by-line or per-section TTS sounds disconnected — always one take (`"take": "one"`).
+- Music edits land the kick ±2 s off: measure K, set `music.offset = R − K`. If the offset is > +0.5 s the intro
+  starts silent → order a 3 s longer edit (offsetMsInEdit + 3000) and trim (negative offset) instead.
+- zsh doesn't word-split `$var` (`set -- $cfg` fails) → `${=cfg}`.
+- CDP: `Emulation.setDeviceMetricsOverride` is dropped when a part starts with `goto` → parts end up different
+  sizes. Don't emulate; size the real window. Brand colour per product: `theme` in edit.ts.

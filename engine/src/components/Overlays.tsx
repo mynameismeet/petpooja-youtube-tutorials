@@ -1,6 +1,6 @@
 import { AbsoluteFill, Easing, interpolate } from "remotion";
 import { useGlobalFrame } from "../GlobalTime";
-import { COLORS } from "../theme";
+import { accentOf, COLORS } from "../theme";
 import { FPS } from "../lib/video";
 import { useVideo } from "../VideoContext";
 
@@ -15,7 +15,8 @@ const CHIP_FRAMES = 135;
 // "STEP 3 OF 8" chapter chips, bottom-left
 // ---------------------------------------------------------------------------
 export const ChapterChips: React.FC = () => {
-  const { chapters: CHAPTERS, outroStart: OUTRO_START } = useVideo();
+  const { chapters: CHAPTERS, outroStart: OUTRO_START, theme } = useVideo();
+  const { accent } = accentOf(theme);
   const frame = useGlobalFrame();
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
@@ -57,7 +58,7 @@ export const ChapterChips: React.FC = () => {
                 width: 76,
                 height: 76,
                 borderRadius: 18,
-                backgroundColor: COLORS.accent,
+                backgroundColor: accent,
                 color: COLORS.white,
                 fontSize: 36,
                 fontWeight: 800,
@@ -101,7 +102,8 @@ const FastForwardIcon: React.FC = () => (
 );
 
 export const SpeedBadges: React.FC = () => {
-  const { badges: BADGES } = useVideo();
+  const { badges: BADGES, theme } = useVideo();
+  const { accent } = accentOf(theme);
   const frame = useGlobalFrame();
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
@@ -144,7 +146,7 @@ export const SpeedBadges: React.FC = () => {
               <div style={{ opacity: pulse, display: "flex" }}>
                 <FastForwardIcon />
               </div>
-              <span style={{ color: COLORS.accent }}>{s.rate}×</span>
+              <span style={{ color: accent }}>{s.rate}×</span>
               <span>{s.label}</span>
             </div>
           );

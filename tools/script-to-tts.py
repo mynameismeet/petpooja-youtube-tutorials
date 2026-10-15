@@ -63,10 +63,12 @@ for raw in src.splitlines():
         entry["tts"] = old[lid]["tts"]
     lines.append(entry)
 
-cfg = {"leadIn": 0.9, "tail": 4.0, "music": {"file": "bed.wav", "gainDb": -18}, "lines": lines}
+# take "one": the whole script is ONE voice take (sections = 1 s pauses inside it) — no tone reset between
+# sections. "sections" = one take per "## " block (older videos).
+cfg = {"leadIn": 0.9, "tail": 4.0, "take": "one", "music": {"file": "bed.wav", "gainDb": -18}, "lines": lines}
 if out_file.exists():
     prev = json.loads(out_file.read_text())
-    cfg.update({k: prev[k] for k in ("leadIn", "tail", "music") if k in prev})
+    cfg.update({k: prev[k] for k in ("leadIn", "tail", "music", "take") if k in prev})
 out_file.write_text(json.dumps(cfg, indent=2, ensure_ascii=False) + "\n")
 missing = [l["id"] for l in lines if "tts" not in l]
 print(f"{len(lines)} lines, {sum(len(l['sfx']) for l in lines)} sfx -> {out_file.relative_to(ROOT)}")

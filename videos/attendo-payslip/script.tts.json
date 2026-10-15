@@ -1,0 +1,368 @@
+{
+ "leadIn": 0.9,
+ "tail": 4.0,
+ "take": "one",
+ "music": {
+  "file": "bed.wav",
+  "gainDb": -23.0,
+  "offset": -2.899,
+  "track": "Morning Rises - Airae (Epidemic Sound edit 4c1aa31d)",
+  "duckRatio": 5.0,
+  "duckThreshold": 0.02
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "passage": "S0",
+   "text": "Hello everyone! [p] Petpooja *Attendo* tutorials mein aapka swagat hai.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "whoosh",
+     "gainDb": -20,
+     "at": "start"
+    }
+   ],
+   "tts": "Hello everyone! [p] पेट पूजा *Attendo* tutorials में आपका स्वागत है।"
+  },
+  {
+   "id": "L02",
+   "passage": "S0",
+   "text": "*Petpooja Attendo* se, [p] aap apne staff ki *salary slip* [p] bahut *easily* bana sakte hain.",
+   "pauseAfter": 0.65,
+   "sfx": [],
+   "tts": "*पेट पूजा Attendo* से, [p] आप अपने staff की *salary slip* [p] बहुत *easily* बना सकते हैं।"
+  },
+  {
+   "id": "L03",
+   "passage": "S0",
+   "text": "Attendance se payroll, [p] aur payroll se payslip — [p] sab ek hi jagah.",
+   "pauseAfter": 1.2,
+   "sfx": [],
+   "tts": "Attendance से payroll, [p] और payroll से payslip — [p] सब एक ही जगह।"
+  },
+  {
+   "id": "L04",
+   "passage": "S1",
+   "text": "Shuru karne ke liye, [p] *menu* kholiye.",
+   "pauseAfter": 0.35,
+   "sfx": [
+    {
+     "name": "whoosh",
+     "gainDb": -20,
+     "at": "start"
+    },
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "menu"
+    }
+   ],
+   "tts": "शुरू करने के लिए, [p] *menu* खोलिए।"
+  },
+  {
+   "id": "L05",
+   "passage": "S1",
+   "text": "*Payroll* par click kijiye,",
+   "pauseAfter": 0.35,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Payroll"
+    }
+   ],
+   "tts": "*Payroll* पर click कीजिए,"
+  },
+  {
+   "id": "L06",
+   "passage": "S1",
+   "text": "aur phir *Process Payroll* chuniye.",
+   "pauseAfter": 1.2,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Process"
+    }
+   ],
+   "tts": "और फिर *Process Payroll* चुनिए।"
+  },
+  {
+   "id": "L07",
+   "passage": "S2",
+   "text": "Ab apna *payroll group* chuniye.",
+   "pauseAfter": 0.35,
+   "sfx": [
+    {
+     "name": "whoosh",
+     "gainDb": -20,
+     "at": "start"
+    },
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "group"
+    }
+   ],
+   "tts": "अब अपना *payroll group* चुनिए।"
+  },
+  {
+   "id": "L08",
+   "passage": "S2",
+   "text": "Compliance wala ho, [p] ya bina compliance — [p] dono yahan milenge.",
+   "pauseAfter": 0.35,
+   "sfx": [],
+   "tts": "Compliance वाला हो, [p] या बिना compliance — [p] दोनों यहाँ मिलेंगे।"
+  },
+  {
+   "id": "L09",
+   "passage": "S2",
+   "text": "Hum *No Compliance* group le rahe hain.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Compliance"
+    }
+   ],
+   "tts": "हम *No Compliance* group ले रहे हैं।"
+  },
+  {
+   "id": "L10",
+   "passage": "S2",
+   "text": "Phir payroll ki *dates* dekhiye, [p] aur *Search* kijiye.",
+   "pauseAfter": 1.2,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Search"
+    }
+   ],
+   "tts": "फिर payroll की *dates* देखिए, [p] और *Search* कीजिए।"
+  },
+  {
+   "id": "L11",
+   "passage": "S3",
+   "text": "Ab har employee ka poora hisaab saamne hai — [p] full days, [p] paid days, [p] wages, [p] aur *To Pay*.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "whoosh",
+     "gainDb": -20,
+     "at": "start"
+    }
+   ],
+   "tts": "अब हर employee का पूरा हिसाब सामने है — [p] full days, [p] paid days, [p] wages, [p] और *To Pay*."
+  },
+  {
+   "id": "L12",
+   "passage": "S3",
+   "text": "Ek baar sab *check* kar lijiye. [p] Kuch galat ho, [p] toh abhi theek kar lijiye.",
+   "pauseAfter": 1.2,
+   "sfx": [],
+   "tts": "एक बार सब *check* कर लीजिए। [p] कुछ गलत हो, [p] तो अभी ठीक कर लीजिए।"
+  },
+  {
+   "id": "L13",
+   "passage": "S4",
+   "text": "Sab sahi hai? [p] Toh *Finalize Payroll* par click kijiye.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "whoosh",
+     "gainDb": -20,
+     "at": "start"
+    }
+   ],
+   "tts": "सब सही है? [p] तो *Finalize Payroll* पर click कीजिए।"
+  },
+  {
+   "id": "L14",
+   "passage": "S4",
+   "text": "Isse payroll *lock* ho jaata hai, [p] aur uske baad koi badlav nahi ho sakta.",
+   "pauseAfter": 1.2,
+   "sfx": [],
+   "tts": "इससे payroll *lock* हो जाता है, [p] और उसके बाद कोई बदलाव नहीं हो सकता।"
+  },
+  {
+   "id": "L15",
+   "passage": "S5",
+   "text": "Ab menu se *Finalized Payroll Details* kholiye.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "whoosh",
+     "gainDb": -20,
+     "at": "start"
+    },
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Details"
+    }
+   ],
+   "tts": "अब menu से *Finalized Payroll Details* खोलिए।"
+  },
+  {
+   "id": "L16",
+   "passage": "S5",
+   "text": "Yahan saare finalized payrolls dikhte hain. [p] Hamara *Test* group abhi *Unpaid* hai.",
+   "pauseAfter": 0.65,
+   "sfx": [],
+   "tts": "यहाँ सारे finalized payrolls दिखते हैं। [p] हमारा *Test* group अभी *Unpaid* है।"
+  },
+  {
+   "id": "L17",
+   "passage": "S5",
+   "text": "Teen dots par click karke, [p] *View Payroll* kholiye.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "View"
+    }
+   ],
+   "tts": "तीन dots पर click करके, [p] *View Payroll* खोलिए।"
+  },
+  {
+   "id": "L18",
+   "passage": "S5",
+   "text": "Salary de di ho, [p] toh *Mark As Paid* par click kijiye.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Mark"
+    }
+   ],
+   "tts": "Salary दे दी हो, [p] तो *Mark As Paid* पर click कीजिए।"
+  },
+  {
+   "id": "L19",
+   "passage": "S5",
+   "text": "Box mein *CONFIRM* type kijiye — [p] *capital letters* mein. [p] Phir *Proceed* par click kijiye.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Proceed"
+    }
+   ],
+   "tts": "Box में *Confirm* type कीजिए — [p] *capital letters* में। [p] फिर *Proceed* पर click कीजिए।"
+  },
+  {
+   "id": "L20",
+   "passage": "S5",
+   "text": "Ho gaya! [p] Payroll ab *Paid* hai, [p] aur payslips taiyaar hain.",
+   "pauseAfter": 1.2,
+   "sfx": [
+    {
+     "name": "success",
+     "gainDb": -15,
+     "at": "start"
+    }
+   ],
+   "tts": "हो गया! [p] Payroll अब *Paid* है, [p] और payslips तैयार हैं।"
+  },
+  {
+   "id": "L21",
+   "passage": "S6",
+   "text": "Ab dobara *View Payroll* kholiye.",
+   "pauseAfter": 0.35,
+   "sfx": [
+    {
+     "name": "whoosh",
+     "gainDb": -20,
+     "at": "start"
+    },
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "View"
+    }
+   ],
+   "tts": "अब दोबारा *View Payroll* खोलिए।"
+  },
+  {
+   "id": "L22",
+   "passage": "S6",
+   "text": "Table ko right side scroll kijiye, [p] *Action* column tak.",
+   "pauseAfter": 0.65,
+   "sfx": [],
+   "tts": "Table को right side scroll कीजिए, [p] *Action* column तक।"
+  },
+  {
+   "id": "L23",
+   "passage": "S6",
+   "text": "Employee ke saamne *teen dots* par click kijiye,",
+   "pauseAfter": 0.35,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "dots"
+    }
+   ],
+   "tts": "Employee के सामने *तीन dots* पर click कीजिए,"
+  },
+  {
+   "id": "L24",
+   "passage": "S6",
+   "text": "aur *Download Salary Slip* chuniye.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "click",
+     "gainDb": -16,
+     "word": "Download"
+    }
+   ],
+   "tts": "और *Download Salary Slip* चुनिए।"
+  },
+  {
+   "id": "L25",
+   "passage": "S6",
+   "text": "Aur ye rahi aapki *payslip*! [p] Earnings, [p] deductions, [p] aur *net payable* — [p] sab ek page par.",
+   "pauseAfter": 0.65,
+   "sfx": [
+    {
+     "name": "riser",
+     "gainDb": -20,
+     "at": "start",
+     "align": "end"
+    }
+   ],
+   "tts": "और ये रही आपकी *payslip*! [p] Earnings, [p] deductions, [p] और *net payable* — [p] सब एक page पर।"
+  },
+  {
+   "id": "L26",
+   "passage": "S6",
+   "text": "Aapke employees bhi apni payslip, [p] *Attendo app* se khud download kar sakte hain.",
+   "pauseAfter": 1.2,
+   "sfx": [],
+   "tts": "आपके employees भी अपनी payslip, [p] *Attendo app* से खुद download कर सकते हैं।"
+  },
+  {
+   "id": "L27",
+   "passage": "S7",
+   "text": "Toh dekha aapne — [p] payroll se payslip tak, [p] sirf kuch clicks mein.",
+   "pauseAfter": 0.65,
+   "sfx": [],
+   "tts": "तो देखा आपने — [p] payroll से payslip तक, [p] सिर्फ़ कुछ clicks में।"
+  },
+  {
+   "id": "L28",
+   "passage": "S7",
+   "text": "Aaj hi try kijiye *Petpooja Attendo*. [p] Aur aise hi tutorials ke liye, [p] channel ko *subscribe* karna mat bhooliye!",
+   "pauseAfter": 1.2,
+   "sfx": [],
+   "tts": "आज ही try कीजिए *पेट पूजा Attendo*. [p] और ऐसे ही tutorials के लिए, [p] channel को *subscribe* करना मत भूलिए!"
+  }
+ ]
+}

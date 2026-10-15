@@ -33,11 +33,15 @@ YouTube tutorial (1920×1080, 30 fps) — rendered **once**, after approvals.
 - SFX: house set from `tools/make-sfx.sh` → `sfx/` (original, no licence); per-video overrides in `audio/sfx/`.
 - QC before sharing audio: re-transcribe every line (whisper) for skipped words, check clicks land on their word.
 - Voice must match `voice/voice-profile.md`. Never clone a real person's voice without written consent.
-- Generate the VO **per section** (one take per `## ` block, `tts.mjs render` does this) — line-by-line takes sound
-  disconnected. Short pauses come from commas; only `[pp]`/`[ppp]` become break tags.
+- Generate the VO as **one take for the whole script** (`"take": "one"` in script.tts.json, the default) — section
+  changes become a 1 s pause inside the take; per-section or per-line takes reset the tone and sound disconnected.
+  The mixer only widens pauses that are already silent (full stop ≥0.25 s, `[pp]` ≥0.5 s), never mid-breath.
+- Music under speech: voice ≥14 dB above the bed on every line (check per line; raise `duckRatio` if not).
 - Pronunciation: brand names in Devanagari when Hindi-origin — **Petpooja → `पेट पूजा`**. Test new names with
   `tts.mjs say` + whisper before a full render.
 - Cut before payment screens, QR codes, personal numbers or anything sensitive; crop browser chrome and recorder overlays.
+- No recording? Claude records it in the user's logged-in Chrome over remote debugging (`tools/cdp.mjs`, product
+  domain only; data-changing clicks need the user's OK and a `!` target). It has no cursor → `tools/cursor-path.py`.
 - Highlight coords are source px and break when the page scrolls — verify each with a still.
 - Disk is tight: temp files in the scratchpad, delete models/proxies when done. Secrets only in `.env` (gitignored).
 

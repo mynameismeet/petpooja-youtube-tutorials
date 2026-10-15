@@ -1,4 +1,5 @@
 import { loadFont } from "@remotion/google-fonts/PlusJakartaSans";
+import type { Theme } from "./lib/video";
 
 const { fontFamily } = loadFont("normal", {
   weights: ["500", "600", "700", "800"],
@@ -19,6 +20,13 @@ export const COLORS = {
   glass: "rgba(10, 18, 40, 0.78)",
   glassBorder: "rgba(255, 255, 255, 0.14)",
 };
+
+/** A video's accent colours (VideoInput.theme), falling back to Petpooja red. */
+export const accentOf = (t?: Theme) => ({
+  accent: t?.accent ?? COLORS.accent,
+  glow: t?.accentGlow ?? COLORS.accentGlow,
+  gradient: t?.gradient ?? ([COLORS.accent, "#FF9F43"] as [string, string]),
+});
 
 export const VIDEO_W = 1920;
 export const VIDEO_H = 1080;

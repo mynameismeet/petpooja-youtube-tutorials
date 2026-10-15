@@ -90,8 +90,9 @@ const speak = async (voiceId, lines, i, outFile) => {
 };
 
 // ---------------------------------------------------------------------------
-// Passage mode: every "## section" of the script is generated as ONE take so the
-// intonation flows, then split into per-line WAVs at the middle of each pause.
+// Passage mode: the script is generated as ONE take ("take": "one" in script.tts.json —
+// section changes become a 1 s pause inside it) or one take per "## section"
+// ("take": "sections"), then split into per-line WAVs at the middle of each pause.
 // Played back to back the lines reproduce the take exactly; per-line alignment
 // keeps click SFX anchored to their words.
 // ---------------------------------------------------------------------------
@@ -109,13 +110,17 @@ const gapTag = (pause) => (pause >= 1 ? ' <break time="1.0s" /> ' : pause >= 0.6
 
 const renderPassages = async (slug, only) => {
   const lines = loadLines(slug);
+  const oneTake = JSON.parse(fs.readFileSync(path.join(ROOT, "videos", slug, "script.tts.json"), "utf8")).take === "one";
   const groups = [];
   for (const l of lines) {
     const g = groups.at(-1);
-    if (g && g.id === l.passage) g.lines.push(l);
-    else groups.push({ id: l.passage, lines: [l] });
+    if (oneTake && g) g.lines.push(l);
+    else if (g && g.id === l.passage) g.lines.push(l);
+    else groups.push({ id: oneTake ? "take" : l.passage, lines: [l] });
   }
-  const textOf = (g) => g.lines.map((l, k) => passageSpeech(l) + (k < g.lines.length - 1 ? gapTag(l.pauseAfter) : "")).join("");
+  // one take: only section changes get a break tag (few tags = steady read); sentences pause on punctuation
+  const gap = (l, n) => (oneTake ? (n.passage !== l.passage ? ' <break time="1.0s" /> ' : " ") : gapTag(l.pauseAfter));
+  const textOf = (g) => g.lines.map((l, k) => passageSpeech(l) + (k < g.lines.length - 1 ? gap(l, g.lines[k + 1]) : "")).join("");
   const voDir = path.join(ROOT, "videos", slug, "audio/vo");
   const pDir = path.join(voDir, "passages");
   fs.mkdirSync(pDir, { recursive: true });

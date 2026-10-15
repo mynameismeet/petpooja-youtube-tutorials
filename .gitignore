@@ -12,6 +12,11 @@ videos/*/audio/vo/
 videos/*/audio/music/
 videos/*/audio/mix/*.wav
 videos/*/exports/
+# account screenshots, downloaded documents and voice notes stay local (not needed to rebuild a video)
+videos/*/source/explore/
+videos/*/source/payslip/
+videos/*/source/*.aac
+videos/*/source/*.m4a
 engine/public/*/
 !engine/public/brand/
 .DS_Store
